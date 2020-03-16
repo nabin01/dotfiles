@@ -24,7 +24,6 @@ alias \
     g="git" \
     p="sudo pacman" \
     f="$FILE" \
-    e="$EDITOR" \
     v="$EDITOR"
 
 alias \
