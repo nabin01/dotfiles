@@ -43,6 +43,4 @@ alias \
 # edit files
 alias \
     i="$EDITOR ~/.i3/config" \
-    e="$EDITOR ~/.config/nvim/init.vim" \
-    n="cd ~/ddrive/docs/n && $EDITOR note" \
-    c="cd ~/Documents/78/note && $EDITOR note" 
+    e="$EDITOR ~/.config/nvim/init.vim" 
