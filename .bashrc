@@ -1,4 +1,6 @@
+#
 # ~/.bashrc
+#
 
 [[ $- != *i* ]] && return
 
@@ -18,7 +20,7 @@ colors() {
 			bgc=${bgc#40} # black
 
 			vals="${fgc:+$fgc;}${bgc}"
-			ls=${vals%%;}
+			vals=${vals%%;}
 
 			seq0="${vals:+\e[${vals}m}"
 			printf "  %-9s" "${seq0:-(default)}"
@@ -71,7 +73,6 @@ if ${use_color} ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
 		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
-
 	fi
 
 	alias ls='ls --color=auto'
@@ -136,10 +137,6 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
-fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
