@@ -19,7 +19,3 @@
 /.config/*
 !/.config/nvim/
 !/.config/nvim/**
-!/.config/dwm/
-!/.config/dwm/**
-!/.config/st/
-!/.config/st/**

@@ -1,1 +1,0 @@
-/home/nabin/suckless/dwm/config.h
