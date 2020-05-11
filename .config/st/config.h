@@ -1,0 +1,1 @@
+/home/nabin/suckless/st/config.h
