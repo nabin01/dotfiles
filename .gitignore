@@ -9,6 +9,9 @@
 /.bash_history
 /.bash_logout
 
+
+!/.spacemacs
+
 #!/.tmux/
 #!/.tmux/**
 !/.tmux.conf
@@ -17,4 +20,13 @@
 /.config/*
 !/.config/nvim/
 !/.config/nvim/**
+
+!/suckless/
+/suckless/*
+!/suckless/st/
+/suckless/st/**
+!/suckless/st/config.h
+/suckless/dwm/**
+!/suckless/dwm/config.h
+
 

@@ -5,13 +5,11 @@ set encoding=utf-8
 
 call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
-" Plug 'preservim/nerdcommenter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'dracula/vim'
 Plug 'ajh17/spacegray.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'morhetz/gruvbox'
-Plug 'vim-scripts/vim-auto-save'
 Plug 'majutsushi/tagbar'
 " Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
@@ -19,8 +17,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 call plug#end()
 
 " Configuration
@@ -211,53 +207,3 @@ if get(g:, 'elite_mode')
     nnoremap <Left>     :vertical resize +2<CR>
     nnoremap <Right>    :vertical resize -2<CR>
 endif
-
-" coc settings
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
-
-" <TAB>: completion
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1] =~# '\s'
-endfunction
-
-inoremap <silent><expr> <c-space> coc#refresh()
-
-if exists('*complete_info')
-    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-    imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
