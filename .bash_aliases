@@ -7,7 +7,7 @@ command -v nvim > /dev/null && alias vim="nvim" vimdiff="nvim -d"
 alias \
     cp="cp -iv" \
     mv="mv -iv" \
-    rm="rm -iv" \
+    rm="rm -i" \
     mkdir="mkdir -pv"
 
 # colorize commands when possible
