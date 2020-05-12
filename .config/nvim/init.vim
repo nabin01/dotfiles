@@ -41,6 +41,11 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
+" Ignore case for search
+set ignorecase
+" Disable ignorecase when searched with UPPER letters only
+set smartcase
+
 " Buffers
 set autoread
 set hidden
@@ -64,7 +69,8 @@ if (has("termguicolors"))
 endif
 syntax enable
 set t_Co=256
-colorscheme dracula
+colorscheme gruvbox
+set bg=light
 
 " Disable auto commenting on next line
 "autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
