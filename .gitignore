@@ -11,6 +11,8 @@
 
 !/.spacemacs
 
+!/.xinitrc
+
 #!/.tmux/
 #!/.tmux/**
 !/.tmux.conf
